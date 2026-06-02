@@ -13,10 +13,14 @@ namespace MediaTek86.Modele
     /// </summary>
     public class Absence
     {
+        public DateTime Datedebut { get { return datedebut; } }
+        public DateTime Datefin { get { return datefin; } }
+        public string Motif { get { return motif.GetLibelle(); } }
         private DateTime datedebut;
         private DateTime datefin;
         private Personnel personnel;
         private Motif motif;
+        public Motif LeMotif { get { return motif; } }
 
         /// <summary>
         /// Constructeur de la classe Absence.

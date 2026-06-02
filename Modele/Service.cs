@@ -14,11 +14,6 @@ namespace MediaTek86.Modele
         private int idservice;
         private string nom;
 
-        /// <summary>
-        /// Constructeur de la classe Service.
-        /// </summary>
-        /// <param name="idservice">Identifiant du service.</param>
-        /// <param name="nom">Nom du service.</param>
         public Service(int idservice, string nom)
         {
             this.idservice = idservice;
@@ -31,6 +26,11 @@ namespace MediaTek86.Modele
         }
 
         public string GetNom()
+        {
+            return nom;
+        }
+
+        public override string ToString()
         {
             return nom;
         }

@@ -1,73 +1,71 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MediaTek86.bddmanager
 {
-    /// <summary>
-    /// Classe technique permettant de gérer la connexion à la base de données.
-    /// </summary>
     public class BddManager
     {
         private static BddManager instance = null;
-        private MySqlConnection cnx;
+        private MySqlConnection connection;
 
-        /// <summary>
-        /// Constructeur privé.
-        /// </summary>
-        private BddManager()
+        private BddManager(string stringConnect)
         {
-            cnx = new MySqlConnection(dal.Access.GetConnectionString());
+            connection = new MySqlConnection(stringConnect);
+            connection.Open();
         }
 
-        /// <summary>
-        /// Récupère l'instance unique de BddManager.
-        /// </summary>
-        /// <returns>Instance unique de BddManager.</returns>
-        public static BddManager GetInstance()
+        public static BddManager GetInstance(string stringConnect)
         {
             if (instance == null)
             {
-                instance = new BddManager();
+                instance = new BddManager(stringConnect);
             }
             return instance;
         }
 
-        /// <summary>
-        /// Ouvre la connexion à la base de données.
-        /// </summary>
-        public void OpenConnection()
+        public void ReqUpdate(string req, Dictionary<string, object> parameters = null)
         {
-            if (cnx.State == ConnectionState.Closed)
+            MySqlCommand command = new MySqlCommand(req, connection);
+
+            if (parameters != null)
             {
-                cnx.Open();
+                foreach (KeyValuePair<string, object> parameter in parameters)
+                {
+                    command.Parameters.Add(new MySqlParameter(parameter.Key, parameter.Value));
+                }
             }
+
+            command.Prepare();
+            command.ExecuteNonQuery();
         }
 
-        /// <summary>
-        /// Ferme la connexion à la base de données.
-        /// </summary>
-        public void CloseConnection()
+        public List<object[]> ReqSelect(string req, Dictionary<string, object> parameters = null)
         {
-            if (cnx.State == ConnectionState.Open)
-            {
-                cnx.Close();
-            }
-        }
+            MySqlCommand command = new MySqlCommand(req, connection);
 
-        /// <summary>
-        /// Retourne la connexion MySQL.
-        /// </summary>
-        /// <returns>Connexion MySQL.</returns>
-        public MySqlConnection GetConnection()
-        {
-            return cnx;
+            if (parameters != null)
+            {
+                foreach (KeyValuePair<string, object> parameter in parameters)
+                {
+                    command.Parameters.Add(new MySqlParameter(parameter.Key, parameter.Value));
+                }
+            }
+
+            command.Prepare();
+
+            MySqlDataReader reader = command.ExecuteReader();
+            int nbCols = reader.FieldCount;
+            List<object[]> records = new List<object[]>();
+
+            while (reader.Read())
+            {
+                object[] valeurs = new object[nbCols];
+                reader.GetValues(valeurs);
+                records.Add(valeurs);
+            }
+
+            reader.Close();
+            return records;
         }
     }
 }
-
-

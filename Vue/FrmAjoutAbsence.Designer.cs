@@ -28,41 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btAnnuler = new System.Windows.Forms.Button();
+            this.btValider = new System.Windows.Forms.Button();
+            this.cbMotif = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateDebut = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateFin = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button2
+            // btAnnuler
             // 
-            this.button2.Location = new System.Drawing.Point(45, 216);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 33);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Annuler";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btAnnuler.Location = new System.Drawing.Point(45, 216);
+            this.btAnnuler.Name = "btAnnuler";
+            this.btAnnuler.Size = new System.Drawing.Size(96, 33);
+            this.btAnnuler.TabIndex = 21;
+            this.btAnnuler.Text = "Annuler";
+            this.btAnnuler.UseVisualStyleBackColor = true;
+            this.btAnnuler.Click += new System.EventHandler(this.btAnnuler_Click);
             // 
-            // button1
+            // btValider
             // 
-            this.button1.Location = new System.Drawing.Point(147, 216);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 33);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Valider";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btValider.Location = new System.Drawing.Point(147, 216);
+            this.btValider.Name = "btValider";
+            this.btValider.Size = new System.Drawing.Size(96, 33);
+            this.btValider.TabIndex = 20;
+            this.btValider.Text = "Valider";
+            this.btValider.UseVisualStyleBackColor = true;
+            this.btValider.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox1
+            // cbMotif
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(45, 164);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(142, 24);
-            this.comboBox1.TabIndex = 23;
+            this.cbMotif.FormattingEnabled = true;
+            this.cbMotif.Location = new System.Drawing.Point(45, 164);
+            this.cbMotif.Name = "cbMotif";
+            this.cbMotif.Size = new System.Drawing.Size(142, 24);
+            this.cbMotif.TabIndex = 23;
             // 
             // label5
             // 
@@ -83,19 +85,19 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Date début :";
             // 
-            // dateTimePicker1
+            // dtpDateDebut
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(45, 46);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 25;
+            this.dtpDateDebut.Location = new System.Drawing.Point(45, 46);
+            this.dtpDateDebut.Name = "dtpDateDebut";
+            this.dtpDateDebut.Size = new System.Drawing.Size(200, 22);
+            this.dtpDateDebut.TabIndex = 25;
             // 
-            // dateTimePicker2
+            // dtpDateFin
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(45, 104);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker2.TabIndex = 27;
+            this.dtpDateFin.Location = new System.Drawing.Point(45, 104);
+            this.dtpDateFin.Name = "dtpDateFin";
+            this.dtpDateFin.Size = new System.Drawing.Size(200, 22);
+            this.dtpDateFin.TabIndex = 27;
             // 
             // label2
             // 
@@ -111,14 +113,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 284);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dtpDateFin);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpDateDebut);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbMotif);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btAnnuler);
+            this.Controls.Add(this.btValider);
             this.Name = "FrmAjoutAbsence";
             this.Text = "Ajouter une absence";
             this.ResumeLayout(false);
@@ -128,13 +130,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btAnnuler;
+        private System.Windows.Forms.Button btValider;
+        private System.Windows.Forms.ComboBox cbMotif;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpDateDebut;
+        private System.Windows.Forms.DateTimePicker dtpDateFin;
         private System.Windows.Forms.Label label2;
     }
 }

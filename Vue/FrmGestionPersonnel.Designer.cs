@@ -33,16 +33,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtMail = new System.Windows.Forms.TextBox();
+            this.cbService = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btAjouter = new System.Windows.Forms.Button();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.txtPrenom = new System.Windows.Forms.TextBox();
+            this.txtTel = new System.Windows.Forms.TextBox();
+            this.btModifier = new System.Windows.Forms.Button();
+            this.btSupprimer = new System.Windows.Forms.Button();
+            this.btGerer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,104 +94,109 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Service :";
             // 
-            // textBox1
+            // txtMail
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 22);
-            this.textBox1.TabIndex = 5;
+            this.txtMail.Location = new System.Drawing.Point(100, 97);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(142, 22);
+            this.txtMail.TabIndex = 5;
             // 
-            // comboBox1
+            // cbService
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(100, 128);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(142, 24);
-            this.comboBox1.TabIndex = 6;
+            this.cbService.FormattingEnabled = true;
+            this.cbService.Location = new System.Drawing.Point(100, 128);
+            this.cbService.Name = "cbService";
+            this.cbService.Size = new System.Drawing.Size(142, 24);
+            this.cbService.TabIndex = 6;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 158);
+            this.dataGridView1.Location = new System.Drawing.Point(21, 173);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(328, 142);
+            this.dataGridView1.Size = new System.Drawing.Size(843, 346);
             this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // button1
+            // btAjouter
             // 
-            this.button1.Location = new System.Drawing.Point(21, 322);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 33);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Ajouter";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btAjouter.Location = new System.Drawing.Point(21, 538);
+            this.btAjouter.Name = "btAjouter";
+            this.btAjouter.Size = new System.Drawing.Size(73, 33);
+            this.btAjouter.TabIndex = 8;
+            this.btAjouter.Text = "Ajouter";
+            this.btAjouter.UseVisualStyleBackColor = true;
+            this.btAjouter.Click += new System.EventHandler(this.btAjouter_Click);
             // 
-            // textBox2
+            // txtNom
             // 
-            this.textBox2.Location = new System.Drawing.Point(100, 13);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(142, 22);
-            this.textBox2.TabIndex = 9;
+            this.txtNom.Location = new System.Drawing.Point(100, 13);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(142, 22);
+            this.txtNom.TabIndex = 9;
             // 
-            // textBox3
+            // txtPrenom
             // 
-            this.textBox3.Location = new System.Drawing.Point(100, 41);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(142, 22);
-            this.textBox3.TabIndex = 10;
+            this.txtPrenom.Location = new System.Drawing.Point(100, 41);
+            this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.Size = new System.Drawing.Size(142, 22);
+            this.txtPrenom.TabIndex = 10;
             // 
-            // textBox4
+            // txtTel
             // 
-            this.textBox4.Location = new System.Drawing.Point(100, 69);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(142, 22);
-            this.textBox4.TabIndex = 11;
+            this.txtTel.Location = new System.Drawing.Point(100, 69);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(142, 22);
+            this.txtTel.TabIndex = 11;
             // 
-            // button2
+            // btModifier
             // 
-            this.button2.Location = new System.Drawing.Point(100, 322);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 33);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Modifier";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btModifier.Location = new System.Drawing.Point(100, 538);
+            this.btModifier.Name = "btModifier";
+            this.btModifier.Size = new System.Drawing.Size(73, 33);
+            this.btModifier.TabIndex = 12;
+            this.btModifier.Text = "Modifier";
+            this.btModifier.UseVisualStyleBackColor = true;
+            this.btModifier.Click += new System.EventHandler(this.btModifier_Click);
             // 
-            // button3
+            // btSupprimer
             // 
-            this.button3.Location = new System.Drawing.Point(179, 322);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 33);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Supprimer";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btSupprimer.Location = new System.Drawing.Point(179, 538);
+            this.btSupprimer.Name = "btSupprimer";
+            this.btSupprimer.Size = new System.Drawing.Size(79, 33);
+            this.btSupprimer.TabIndex = 13;
+            this.btSupprimer.Text = "Supprimer";
+            this.btSupprimer.UseVisualStyleBackColor = true;
+            this.btSupprimer.Click += new System.EventHandler(this.btSupprimer_Click);
             // 
-            // button4
+            // btGerer
             // 
-            this.button4.Location = new System.Drawing.Point(21, 361);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(126, 34);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Gérer Absences";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btGerer.Location = new System.Drawing.Point(21, 577);
+            this.btGerer.Name = "btGerer";
+            this.btGerer.Size = new System.Drawing.Size(126, 34);
+            this.btGerer.TabIndex = 14;
+            this.btGerer.Text = "Gérer Absences";
+            this.btGerer.UseVisualStyleBackColor = true;
+            this.btGerer.Click += new System.EventHandler(this.btGerer_Click);
             // 
             // FrmGestionPersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 408);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(876, 623);
+            this.Controls.Add(this.btGerer);
+            this.Controls.Add(this.btSupprimer);
+            this.Controls.Add(this.btModifier);
+            this.Controls.Add(this.txtTel);
+            this.Controls.Add(this.txtPrenom);
+            this.Controls.Add(this.txtNom);
+            this.Controls.Add(this.btAjouter);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbService);
+            this.Controls.Add(this.txtMail);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -212,15 +217,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtMail;
+        private System.Windows.Forms.ComboBox cbService;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btAjouter;
+        private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.TextBox txtPrenom;
+        private System.Windows.Forms.TextBox txtTel;
+        private System.Windows.Forms.Button btModifier;
+        private System.Windows.Forms.Button btSupprimer;
+        private System.Windows.Forms.Button btGerer;
     }
 }

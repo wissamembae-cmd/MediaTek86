@@ -40,16 +40,17 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(25, 294);
+            this.button4.Location = new System.Drawing.Point(25, 586);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(87, 34);
             this.button4.TabIndex = 21;
             this.button4.Text = "Retour";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(211, 231);
+            this.button3.Location = new System.Drawing.Point(211, 523);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(87, 33);
             this.button3.TabIndex = 20;
@@ -58,7 +59,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(118, 231);
+            this.button2.Location = new System.Drawing.Point(118, 523);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 33);
             this.button2.TabIndex = 19;
@@ -67,7 +68,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(25, 231);
+            this.button1.Location = new System.Drawing.Point(25, 523);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 33);
             this.button1.TabIndex = 18;
@@ -81,7 +82,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(271, 104);
+            this.dataGridView1.Size = new System.Drawing.Size(715, 400);
             this.dataGridView1.TabIndex = 17;
             // 
             // comboBox1
@@ -105,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 345);
+            this.ClientSize = new System.Drawing.Size(774, 634);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

@@ -1,11 +1,14 @@
-﻿using System;
+﻿using MediaTek86.dal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace MediaTek86.Modele
 {
+
     /// <summary>
     /// Classe métier représentant un personnel.
     /// </summary>
@@ -17,6 +20,13 @@ namespace MediaTek86.Modele
         private string tel;
         private string mail;
         private Service service;
+        public int Idpersonnel { get { return idpersonnel; } }
+        public string Nom { get { return nom; } }
+        public string Prenom { get { return prenom; } }
+        public string Tel { get { return tel; } }
+        public string Mail { get { return mail; } }
+        public Service Service { get { return service; } }
+        public string NomService { get { return service.GetNom(); } }
 
         /// <summary>
         /// Constructeur de la classe Personnel.
@@ -66,5 +76,6 @@ namespace MediaTek86.Modele
         {
             return service;
         }
+
     }
 }

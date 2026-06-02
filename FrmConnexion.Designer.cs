@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtLogin = new System.Windows.Forms.TextBox();
+            this.btnConnexion = new System.Windows.Forms.Button();
+            this.txtPwd = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -44,29 +44,32 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Login :";
             // 
-            // textBox1
+            // txtLogin
             // 
-            this.textBox1.Location = new System.Drawing.Point(127, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtLogin.Location = new System.Drawing.Point(127, 31);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(197, 22);
+            this.txtLogin.TabIndex = 1;
             // 
-            // button1
+            // btnConnexion
             // 
-            this.button1.Location = new System.Drawing.Point(223, 116);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Connexion";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnConnexion.AccessibleDescription = "";
+            this.btnConnexion.AccessibleName = "";
+            this.btnConnexion.Location = new System.Drawing.Point(223, 116);
+            this.btnConnexion.Name = "btnConnexion";
+            this.btnConnexion.Size = new System.Drawing.Size(101, 36);
+            this.btnConnexion.TabIndex = 2;
+            this.btnConnexion.Text = "Connexion";
+            this.btnConnexion.UseVisualStyleBackColor = true;
+            this.btnConnexion.Click += new System.EventHandler(this.btnConnexion_Click);
             // 
-            // textBox2
+            // txtPwd
             // 
-            this.textBox2.Location = new System.Drawing.Point(127, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(197, 22);
-            this.textBox2.TabIndex = 3;
+            this.txtPwd.Location = new System.Drawing.Point(127, 70);
+            this.txtPwd.Name = "txtPwd";
+            this.txtPwd.PasswordChar = '*';
+            this.txtPwd.Size = new System.Drawing.Size(197, 22);
+            this.txtPwd.TabIndex = 3;
             // 
             // label2
             // 
@@ -83,12 +86,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 164);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPwd);
+            this.Controls.Add(this.btnConnexion);
+            this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label1);
             this.Name = "FrmConnexion";
             this.Text = "Connexion";
+            this.Load += new System.EventHandler(this.FrmConnexion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,9 +101,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtLogin;
+        private System.Windows.Forms.Button btnConnexion;
+        private System.Windows.Forms.TextBox txtPwd;
         private System.Windows.Forms.Label label2;
     }
 }

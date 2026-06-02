@@ -34,5 +34,9 @@ namespace MediaTek86.Modele
         {
             return libelle;
         }
+        public override string ToString()
+        {
+            return libelle;
+        }
     }
 }

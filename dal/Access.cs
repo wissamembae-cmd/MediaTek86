@@ -1,25 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediaTek86.bddmanager;
+using System;
 
 namespace MediaTek86.dal
 {
-    /// <summary>
-    /// Classe contenant les informations d'accès à la base de données.
-    /// </summary>
     public class Access
     {
-        private static string connectionString = "server=localhost;database=mediatek86;uid=userMediatek;pwd=mdpMediatek86;";
+        private static readonly string connectionString = "server=localhost;user id=userMediatek;password=mdpMediatek86;database=mediatek86;AllowPublicKeyRetrieval=True;";
+        private static Access instance = null;
 
-        /// <summary>
-        /// Retourne la chaîne de connexion à la base de données.
-        /// </summary>
-        /// <returns>Chaîne de connexion.</returns>
-        public static string GetConnectionString()
+        public BddManager Manager { get; }
+
+        private Access()
         {
-            return connectionString;
+            try
+            {
+                Manager = BddManager.GetInstance(connectionString);
+            }
+            catch (Exception)
+            {
+                Environment.Exit(0);
+            }
+        }
+
+        public static Access GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new Access();
+            }
+            return instance;
         }
     }
 }
