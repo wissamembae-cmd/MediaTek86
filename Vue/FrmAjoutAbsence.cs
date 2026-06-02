@@ -31,11 +31,6 @@ namespace MediaTek86.Vue
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void btValider_Click(object sender, EventArgs e)
         {
             Motif motif = (Motif)cbMotif.SelectedItem;

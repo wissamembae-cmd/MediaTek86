@@ -22,9 +22,13 @@ namespace MediaTek86.Vue
             this.personnel = personnel;
             controle = new ControleAbsence();
 
+            txtPersonnel.Text = personnel.Nom + " " + personnel.Prenom;
+            txtPersonnel.Enabled = false;
+
             this.Text = "Absences de " + personnel.Nom + " " + personnel.Prenom;
 
             dataGridView1.DataSource = controle.GetLesAbsences(personnel);
+            dataGridView1.Columns["LeMotif"].Visible = false;
         }
         private void btSupprimer_Click(object sender, EventArgs e)
         {
@@ -44,6 +48,7 @@ namespace MediaTek86.Vue
 
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = controle.GetLesAbsences(personnel);
+                    dataGridView1.Columns["LeMotif"].Visible = false;
 
                     MessageBox.Show("Absence supprimée");
                 }
@@ -66,6 +71,44 @@ namespace MediaTek86.Vue
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            FrmAjoutAbsence frm = new FrmAjoutAbsence(personnel);
+            frm.ShowDialog();
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = controle.GetLesAbsences(personnel);
+        }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                Absence absence = (Absence)dataGridView1.CurrentRow.DataBoundItem;
+
+                FrmModifAbsence frm = new FrmModifAbsence(absence);
+                frm.ShowDialog();
+
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = controle.GetLesAbsences(personnel);
+            }
+        }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                Absence absence = (Absence)dataGridView1.CurrentRow.DataBoundItem;
+
+                controle.SupprimerAbsence(absence);
+
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = controle.GetLesAbsences(personnel);
+
+                MessageBox.Show("Absence supprimée");
+            }
         }
     }
 }

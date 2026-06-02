@@ -65,9 +65,9 @@ namespace MediaTek86.Vue
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btAnnuler_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

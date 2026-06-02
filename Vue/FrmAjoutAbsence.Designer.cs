@@ -56,7 +56,7 @@
             this.btValider.TabIndex = 20;
             this.btValider.Text = "Valider";
             this.btValider.UseVisualStyleBackColor = true;
-            this.btValider.Click += new System.EventHandler(this.button1_Click);
+            this.btValider.Click += new System.EventHandler(this.btValider_Click);
             // 
             // cbMotif
             // 
