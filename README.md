@@ -1,37 +1,45 @@
-MediaTek86
-Description
+# MediaTek86
 
-MediaTek86 est une application développée en C# et MySQL permettant de gérer les personnels d'une médiathèque ainsi que leurs absences.
+## Description
 
-Ce projet a été réalisé dans le cadre du BTS SIO.
+MediaTek86 est une application développée en **C#** et **MySQL** permettant de gérer les personnels d'une médiathèque ainsi que leurs absences.
 
-Fonctionnalités :
-Connexion du responsable
-Affichage des personnels
-Ajout, modification et suppression d'un personnel
-Affichage des absences
-Ajout, modification et suppression d'une absence
-Contrôle du chevauchement des absences
+Projet réalisé dans le cadre du **BTS Services Informatiques aux Organisations (SIO)**.
 
-Outils utilisés :
-Visual Studio 2022
-C#
-Windows Forms
-MySQL
-GitHub
+## Fonctionnalités
 
-Organisation du projet :
-Modele : classes métier
-Vue : formulaires
-Controleur : gestion des traitements
-dal : accès aux données
-bddmanager : gestion de la connexion à la base de données
+- Authentification du responsable
+- Consultation des personnels
+- Ajout, modification et suppression d'un personnel
+- Consultation des absences
+- Ajout, modification et suppression d'une absence
+- Vérification des chevauchements d'absences
 
-Installation :
-Importer le script SQL fourni.
-Vérifier les paramètres de connexion à la base de données.
-Ouvrir la solution dans Visual Studio.
-Compiler puis lancer l'application.
+## Technologies utilisées
 
-Dépôt GitHub
-Le dépôt contient le code source, le script SQL ainsi que les différentes sauvegardes réalisées au cours du projet.
+- C#
+- Windows Forms
+- MySQL
+- Visual Studio 2022
+- Git
+
+## Architecture
+
+- **Modèle** : classes métier
+- **Vue** : formulaires Windows Forms
+- **Contrôleur** : gestion des traitements
+- **DAL** : accès aux données
+- **BDDManager** : gestion de la connexion MySQL
+
+## Installation
+
+1. Importer le script SQL.
+2. Configurer les paramètres de connexion.
+3. Ouvrir la solution avec Visual Studio 2022.
+4. Compiler puis lancer l'application.
+
+## Contenu du dépôt
+
+- Code source
+- Script SQL
+- Sauvegardes du projet
